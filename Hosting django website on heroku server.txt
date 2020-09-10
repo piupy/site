@@ -1,0 +1,92 @@
+
+ 
+>>>>>>>> Hosting django website on "heroku" server :
+
+Create an account on heroku. Install heroku CLI from its website
+
+Set up the environment varianbles :
+
+In system variables, use "C:\Program Files\heroku\bin"
+ 
+To install the virtual environment :  pip install pipenv 
+
+Install GIT
+
+In cmd :  heroku login
+
+(
+
+in case, heroku is not recognized, type :
+
+
+npm uninstall -g heroku-cli
+
+npm i -g heroku
+
+)
+
+Login in heroku 
+
+Create a virtual environment in the folder containing the project (outside "manage.py") by :
+
+virtualenv .
+
+Activate the virtual environment (in the project folder only) by :   .\Scripts\activate
+
+(To come out of virtualenv :   deactivate)
+
+Install django
+
+Go inside the folder having "manage.py" and run the server.
+
+Create a file inside the folder having "manage.py" with the name "Procfile" and paste :
+
+web: gunicorn project_name.wsgi   # present in "manage.py" path
+
+pip install gunicorn
+
+pip install django-heroku
+
+In "settings.py" file, paste 
+
+import django_heroku # before import os 
+
+django_heroku.settings(locals()) # at the end
+
+To see the list of pip packages :  pip freeze 
+
+Create a file specifying dependencies of the project :    pip freeze > requirements.txt
+
+cmd : heroku create app_name
+
+The app link will be shared by heroku.
+
+Push the files using GIT (files and folders present in "manage.py" path)
+
+git init
+
+git status
+
+git add .
+
+git status
+
+git commit -m "comments here"
+
+To set the remote URL :   heroku git:remote -a app_name 
+
+git push heroku master
+
+heroku run bash
+
+ls/dir
+
+To push the database files as well :    python manage.py migrate 
+
+Now, reload the website. It will be rendered with blank database.
+
+Create a superuser to access the admin panel (in the bash only) :  python manage.py createsuperuser
+
+Now, admin panel can also be accessed.
+
+Enjoy !!!

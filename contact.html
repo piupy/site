@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>PIUPY</title>
+    <title>PIUPY Contact Form</title>
   </head>
   <body>
 
@@ -46,38 +46,57 @@
 <br><br><br>
 <div class="container">
 
+      <h3 id="content-head" class="content-head">Contact Us</h3>
+      <!-- START HERE -->
+      <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
+         action="https://script.google.com/macros/s/AKfycbz7FHEF0ibMzm_B__55bIp95MQ-_nznrfygywoL/exec">
 
-    <h3>Contact Us</h3>
-    <form action="/site/contact.html" onsubmit="return fnSubmit();">
-       
+         <div class="form-elements">
+
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" required id="name" name="name" placeholder="Please Enter Your Name">
         </div>
+
         <div class="form-group">
             <label for="email">Email</label>
             <input type="email" class="form-control" required id="email" name="email" placeholder="Please Enter Your Email">
         </div>
+
         <div class="form-group">
             <label for="phone">Phone Number</label>
             <input type="tel" class="form-control" required id="phone" name="phone" placeholder="Please Enter Your Phone Number">
         </div>
+
         <div class="form-group">
             <label for="desc">How may we help you ?</label>
             <textarea class="form-control" id="desc" required name="desc" rows="3" placeholder="Please Post Your Query Here"></textarea>
         </div>
+
         <div class="text-center">
         <button type="submit" class="btn btn-primary">Submit</button>
 	</div><br>
-    </form>
+
+         </div>
+
+         <!-- Customise the Thankyou Message People See when they submit the form: -->
+         <div class="thankyou_message" style="display:none;">
+            <h5><em>Thanks</em> for contacting us!
+               We will get back to you soon!
+            </h5>
+	</div>
+      </form>
+
 	<div class="text-center">
         <a href="https://forms.gle/DmaGRf9bpMqd7eFg8" target="_blank" class="btn btn-primary rounded-circle">Demo Session Feedback</a>
 	</div>
 
+      <!-- Submit the Form to Google Using "AJAX" -->
+      <script data-cfasync="false" type="text/javascript"
+         src="form-submission-handler.js"></script>
+      <!-- END -->
 
 </div>
-
-
 
 
     <!-- Optional JavaScript -->
@@ -85,12 +104,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script>
-	function fnSubmit()
-	{
-	   alert('Form submitted.\nWe will reach out to you shortly.');
-	   return true;
-	}
-    </script>
   </body>
 </html>
+
